@@ -75,17 +75,21 @@ h1,h2,h3{font-family:'Secular One',sans-serif;font-weight:400;margin:0}
 .sync h3{font-size:26px;margin-bottom:10px}
 .sync p{margin:0;color:var(--mute)}
 
-/* steps */
-.steps{list-style:none;margin:72px 0 0;padding:0;counter-reset:s}
-.steps li{display:grid;grid-template-columns:90px 1fr 1.3fr;gap:32px;padding:34px 0;border-top:1px solid var(--line);counter-increment:s;align-items:baseline}
-.steps li:last-child{border-bottom:1px solid var(--line)}
-.steps li::before{content:"0" counter(s);font-family:'Secular One',sans-serif;font-size:22px;color:var(--acc)}
-.steps h3{font-size:28px}
-.steps p{margin:0;color:var(--mute)}
+/* quote over photo */
+.quote{position:relative;height:min(78vh,640px);overflow:hidden;display:flex;align-items:flex-end}
+.quote img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.quote::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,11,.95),rgba(10,10,11,.55) 45%,rgba(10,10,11,.1) 80%)}
+.quote-in{position:relative;z-index:1;padding-bottom:60px;width:100%}
+.quote p{font-family:'Secular One',sans-serif;font-size:clamp(32px,4.2vw,58px);line-height:1.2;margin:0;max-width:820px}
+.quote .a{color:var(--acc)}
+.quote .sig{color:#C8C4BC;margin-top:16px;font-size:18px}
 
-/* photo band */
-.band{height:min(70vh,640px);overflow:hidden}
-.band img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+/* steps */
+.steps{list-style:none;margin:56px 0 0;padding:0;counter-reset:s;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.steps li{counter-increment:s;border-top:2px solid var(--line);padding-top:24px}
+.steps li::before{content:"0" counter(s);display:block;font-family:'Secular One',sans-serif;font-size:20px;color:var(--acc);margin-bottom:12px}
+.steps h3{font-size:24px;margin-bottom:8px}
+.steps p{margin:0;color:var(--mute);font-size:17px}
 
 /* included */
 .inc{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
@@ -142,7 +146,7 @@ footer a:hover{color:var(--ink)}
   .top nav{display:none}
   .brand span{display:none}
   .hero{grid-template-columns:1fr;min-height:0}
-  .hero-img{order:-1;height:62vh}
+  .hero-img{height:58vh}
   .hero-text{padding:48px 22px 56px}
   .wrap{padding:0 22px}
   .statement{padding:80px 0}
@@ -150,8 +154,12 @@ footer a:hover{color:var(--ink)}
   .sync{grid-template-columns:1fr}
   .sync div,.sync div+div{padding:30px 0;border-right:0}
   .sync div+div{border-top:1px solid var(--line)}
-  .steps li{grid-template-columns:44px 1fr;gap:6px 16px}
-  .steps li p{grid-column:2}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px;margin-top:40px}
+  .steps h3{font-size:20px}
+  .steps p{font-size:16px}
+  .quote{height:520px}
+  .quote img{object-position:58% 45%}
+  .quote-in{padding-bottom:40px}
   .inc{grid-template-columns:1fr;gap:32px}
   .inc-head{position:static}
   .comm{grid-template-columns:1fr}
@@ -196,32 +204,26 @@ footer a:hover{color:var(--ink)}
 <div class="hero-img"><img src="img/race.jpg" alt="אורי גולדרייך באמצע מרוץ"></div>
 </section>
 
-<section class="statement">
-<div class="wrap">
-<p>אני מאמין שהספורט צריך להתאים לחיים, <span class="a">ולא החיים לספורט.</span> לכן לא תקבלו ממני תוכנית לחודשיים קדימה. תקבלו תוכנית לשבוע הקרוב, שנבנית מחדש לפי מה שקרה בשבוע שעבר.</p>
-<div class="sig">— אורי</div>
-</div>
-</section>
-
 <section class="sec" id="how">
 <div class="wrap">
 <div class="label">איך זה עובד</div>
-<h2>אני רואה כל ריצה שלכם.</h2>
-<p class="lead">אני עובד עם תוכנה שמחברת ביני לבין שעון האימונים שלכם, בשני הכיוונים. ככה אני יכול ללוות אתכם ברמה מקצועית בכל יום, גם מרחוק.</p>
-<div class="sync">
-<div><h3>ממני אליכם</h3><p>כל אימון, עם קצבים והערות, נכנס לשעון שלכם בלחיצת כפתור. יוצאים לרוץ, והשעון כבר יודע מה לעשות.</p></div>
-<div><h3>מכם אליי</h3><p>כשאתם מסיימים אימון, הנתונים עולים אליי. אני רואה איפה עצרתם, איפה הדופק עלה ואיך הקצב התנהג לאורך הדרך.</p></div>
-</div>
+<h2>ככה מתחילים לרוץ יחד.</h2>
 <ol class="steps">
-<li><h3>טופס היכרות</h3><p>שאלות פשוטות על הכושר, השיאים, המטרות ואורח החיים שלכם, כדי שאבין איך התוכנית תשתלב ביום־יום שלכם.</p></li>
-<li><h3>שיחת פתיחה בזום</h3><p>עוברים יחד על הטופס, מחדדים דברים משני הצדדים, ואני מציג לכם את התוכנית הראשונית.</p></li>
-<li><h3>תוכנית לשבוע הקרוב</h3><p>בכל שבוע מגיעה תוכנית חדשה, שמבוססת על מה שלמדתי עליכם בשבוע שעבר.</p></li>
-<li><h3>הודעה אחרי כל אימון</h3><p>אתם מספרים לי איך היה, ויחד אנחנו מחליטים מה משפרים ומה משמרים.</p></li>
+<li><h3>טופס היכרות</h3><p>כמה שאלות קצרות על הכושר, המטרות ואורח החיים שלכם.</p></li>
+<li><h3>שיחת פתיחה בזום</h3><p>עוברים יחד על הטופס, ואני מציג לכם את התוכנית הראשונית.</p></li>
+<li><h3>התוכנית נכנסת לשעון</h3><p>בכל שבוע האימונים לשבוע הקרוב מסתנכרנים ישר לשעון שלכם.</p></li>
+<li><h3>אני רואה כל ריצה</h3><p>כל אימון שאתם מסיימים מגיע אליי, ויחד אנחנו מדייקים את השבוע הבא.</p></li>
 </ol>
 </div>
 </section>
 
-<div class="band"><img src="img/beach.jpg" alt="אורי רץ לאורך החוף בתחרות טריאתלון"></div>
+<section class="quote">
+<img src="img/beach.jpg" alt="אורי רץ לאורך החוף בתחרות טריאתלון">
+<div class="wrap quote-in">
+<p>הספורט צריך להתאים לחיים, <span class="a">ולא החיים לספורט.</span></p>
+<div class="sig">— אורי</div>
+</div>
+</section>
 
 <section class="sec" id="included">
 <div class="wrap inc">
@@ -232,7 +234,7 @@ footer a:hover{color:var(--ink)}
 </div>
 <div class="items">
 <div class="item"><h3>אימוני ריצה מגוונים</h3><p>אימוני איכות מסוגים שונים ואימוני נפח, בהתאם למטרה שהצבנו יחד.</p></div>
-<div class="item"><h3>אימוני חיזוק שנבנו לרצים</h3><p>בריצה הגוף סופג המון זעזועים, כל פעם על רגל אחת. לכן כל מתאמן מקבל לפחות פעמיים בשבוע אימוני יציבה וחיזוק, שחשובים בעיניי לא פחות מאימוני הריצה.</p></div>
+<div class="item"><h3>אימוני חיזוק שנבנו לרצים</h3><p>לפחות פעמיים בשבוע אימוני יציבה וחיזוק, שמגינים מפציעות ומשפרים את הביצועים.</p></div>
 <div class="item"><h3>ניתוח טכניקה</h3><p>מדי פעם אתם שולחים לי סרטון שלכם רצים. אני מנתח אותו בהילוך איטי ושולח לכם תרגילים ודגשים לריצות הבאות.</p></div>
 <div class="item"><h3>זמינות לכל שאלה</h3><p>התאוששות, שינה, תזונה, ציוד וכל מה שמסביב לאימונים. יש לי ידע רב כספורטאי וכמאמן, ואני רוצה שתנצלו אותו.</p></div>
 <div class="item"><h3>התאמת עומסים</h3><p>מתאמנים גם בקבוצת כושר קרבי או במסגרת אחרת? אני מתאים את העומסים בתוכנית כך שהאימונים משלימים זה את זה.</p></div>
