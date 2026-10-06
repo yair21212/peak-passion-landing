@@ -91,13 +91,22 @@ h1,h2,h3{font-family:'Secular One',sans-serif;font-weight:400;margin:0}
 .steps h3{font-size:24px;margin-bottom:8px}
 .steps p{margin:0;color:var(--mute);font-size:17px}
 
-/* included */
-.inc{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
-.inc-head{align-self:start;position:sticky;top:40px}
-.items{border-top:1px solid var(--line)}
-.item{padding:30px 0;border-bottom:1px solid var(--line)}
-.item h3{font-size:25px;margin-bottom:8px}
-.item p{margin:0;color:var(--mute)}
+/* included carousel */
+.car-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px}
+.car-head h2{margin-bottom:0}
+.car-nav{display:flex;gap:10px}
+.car-btn{width:52px;height:52px;border:1px solid #3A3A3E;background:transparent;color:var(--ink);font-size:22px;cursor:pointer;border-radius:2px;transition:background .15s,border-color .15s}
+.car-btn:hover{background:var(--acc);border-color:var(--acc)}
+.car-btn:disabled{opacity:.3;cursor:default;background:transparent;border-color:#3A3A3E}
+.track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
+.track::-webkit-scrollbar{display:none}
+.card{flex:0 0 calc((100% - 40px)/3);scroll-snap-align:start;background:var(--bg2);border:1px solid var(--line);padding:36px 32px;min-height:300px;display:flex;flex-direction:column}
+.card .num{direction:ltr;unicode-bidi:isolate;align-self:flex-start;font-family:'Secular One',sans-serif;color:var(--acc);font-size:18px;margin-bottom:auto;padding-bottom:48px}
+.card h3{font-size:28px;line-height:1.15;margin-bottom:12px}
+.card p{margin:0;color:var(--mute);font-size:18px}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:28px}
+.dot{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:#3A3A3E;cursor:pointer;transition:width .2s,background .2s}
+.dot.on{width:28px;border-radius:4px;background:var(--acc)}
 
 /* community */
 .comm{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
@@ -160,8 +169,9 @@ footer a:hover{color:var(--ink)}
   .quote{height:520px}
   .quote img{object-position:58% 45%}
   .quote-in{padding-bottom:40px}
-  .inc{grid-template-columns:1fr;gap:32px}
-  .inc-head{position:static}
+  .car-nav{display:none}
+  .card{flex-basis:84%;min-height:260px;padding:30px 26px}
+  .card h3{font-size:24px}
   .comm{grid-template-columns:1fr}
   .comm-img{min-height:380px}
   .comm-text{padding:56px 22px}
@@ -221,24 +231,29 @@ footer a:hover{color:var(--ink)}
 <img src="img/beach.jpg" alt="אורי רץ לאורך החוף בתחרות טריאתלון">
 <div class="wrap quote-in">
 <p>הספורט צריך להתאים לחיים, <span class="a">ולא החיים לספורט.</span></p>
-<div class="sig">— אורי</div>
 </div>
 </section>
 
 <section class="sec" id="included">
-<div class="wrap inc">
-<div class="inc-head">
+<div class="wrap">
+<div class="car-head">
+<div>
 <div class="label">מה מקבלים</div>
 <h2>הרבה יותר מתוכנית אימונים.</h2>
-<p class="lead">הערך הכי גדול שאני מביא הוא הליווי היומיומי. ככל שתדברו איתי יותר, תשאלו יותר ותתייעצו יותר, כך תקבלו יותר.</p>
 </div>
-<div class="items">
-<div class="item"><h3>אימוני ריצה מגוונים</h3><p>אימוני איכות מסוגים שונים ואימוני נפח, בהתאם למטרה שהצבנו יחד.</p></div>
-<div class="item"><h3>אימוני חיזוק שנבנו לרצים</h3><p>לפחות פעמיים בשבוע אימוני יציבה וחיזוק, שמגינים מפציעות ומשפרים את הביצועים.</p></div>
-<div class="item"><h3>ניתוח טכניקה</h3><p>מדי פעם אתם שולחים לי סרטון שלכם רצים. אני מנתח אותו בהילוך איטי ושולח לכם תרגילים ודגשים לריצות הבאות.</p></div>
-<div class="item"><h3>זמינות לכל שאלה</h3><p>התאוששות, שינה, תזונה, ציוד וכל מה שמסביב לאימונים. יש לי ידע רב כספורטאי וכמאמן, ואני רוצה שתנצלו אותו.</p></div>
-<div class="item"><h3>התאמת עומסים</h3><p>מתאמנים גם בקבוצת כושר קרבי או במסגרת אחרת? אני מתאים את העומסים בתוכנית כך שהאימונים משלימים זה את זה.</p></div>
+<div class="car-nav">
+<button type="button" class="car-btn" data-dir="prev" aria-label="הקודם">→</button>
+<button type="button" class="car-btn" data-dir="next" aria-label="הבא">←</button>
 </div>
+</div>
+<div class="track" id="track">
+<article class="card"><span class="num">01 / 05</span><h3>אימוני ריצה מגוונים</h3><p>אימוני איכות מסוגים שונים ואימוני נפח, בהתאם למטרה שהצבנו יחד.</p></article>
+<article class="card"><span class="num">02 / 05</span><h3>אימוני חיזוק שנבנו לרצים</h3><p>לפחות פעמיים בשבוע אימוני יציבה וחיזוק, שמגינים מפציעות ומשפרים את הביצועים.</p></article>
+<article class="card"><span class="num">03 / 05</span><h3>ניתוח טכניקה</h3><p>מדי פעם אתם שולחים לי סרטון שלכם רצים, ואני מחזיר לכם ניתוח בהילוך איטי עם תרגילים ודגשים.</p></article>
+<article class="card"><span class="num">04 / 05</span><h3>זמינות לכל שאלה</h3><p>התאוששות, שינה, תזונה, ציוד וכל מה שמסביב לאימונים. אני כאן כדי שתנצלו את הידע שלי.</p></article>
+<article class="card"><span class="num">05 / 05</span><h3>התאמת עומסים</h3><p>מתאמנים גם בקבוצת כושר קרבי או במסגרת אחרת? אני מתאים את העומסים כך שהאימונים משלימים זה את זה.</p></article>
+</div>
+<div class="dots"><button type="button" class="dot" aria-label="כרטיס 1"></button><button type="button" class="dot" aria-label="כרטיס 2"></button><button type="button" class="dot" aria-label="כרטיס 3"></button><button type="button" class="dot" aria-label="כרטיס 4"></button><button type="button" class="dot" aria-label="כרטיס 5"></button></div>
 </div>
 </section>
 
@@ -286,7 +301,6 @@ footer a:hover{color:var(--ink)}
 <div class="wrap">
 <h2>בואו נדבר.</h2>
 <p>שלחו לי הודעה ונקבע שיחת היכרות קצרה. נבין יחד מה המטרה שלכם, ואיך אני יכול לעזור לכם להגיע אליה.</p>
-<a class="big-tel" href="tel:+972502525738">050-252-5738</a>
 <a class="btn" href="https://wa.me/972502525738?text=%D7%94%D7%99%D7%99%20%D7%90%D7%95%D7%A8%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%94%D7%9C%D7%99%D7%95%D7%95%D7%99">שלחו הודעה בוואטסאפ <span class="arr">←</span></a>
 </div>
 </section>
@@ -301,7 +315,22 @@ footer a:hover{color:var(--ink)}
 <div class="wa-float"><a class="btn" href="https://wa.me/972502525738?text=%D7%94%D7%99%D7%99%20%D7%90%D7%95%D7%A8%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%94%D7%9C%D7%99%D7%95%D7%95%D7%99">לשיחת היכרות בוואטסאפ</a></div>
 
 <script>
-var f=document.querySelector('.wa-float');addEventListener('scroll',function(){f.classList.toggle('on',scrollY>window.innerHeight*0.9)},{passive:true});
+(function(){
+var f=document.querySelector('.wa-float'),cta=document.querySelector('.cta');
+function upd(){var r=cta.getBoundingClientRect();f.classList.toggle('on',scrollY>innerHeight*0.9&&r.top>innerHeight)}
+addEventListener('scroll',upd,{passive:true});
+var t=document.getElementById('track'),cards=t.querySelectorAll('.card'),dots=document.querySelectorAll('.dot'),
+prev=document.querySelector('[data-dir=prev]'),next=document.querySelector('[data-dir=next]');
+function step(){return cards[0].offsetWidth+20}
+function idx(){return Math.round(Math.abs(t.scrollLeft)/step())}
+function sync(){var i=idx(),max=t.scrollWidth-t.clientWidth;dots.forEach(function(d,k){d.classList.toggle('on',k===i)});
+prev.disabled=Math.abs(t.scrollLeft)<4;next.disabled=Math.abs(t.scrollLeft)>=max-4}
+function go(i){t.scrollTo({left:-i*step(),behavior:'smooth'})}
+prev.onclick=function(){go(Math.max(0,idx()-1))};
+next.onclick=function(){go(Math.min(cards.length-1,idx()+1))};
+dots.forEach(function(d,k){d.onclick=function(){go(k)}});
+t.addEventListener('scroll',sync,{passive:true});sync();
+})();
 </script>
 </body>
 </html>
