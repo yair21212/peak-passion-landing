@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>אורי גולדרייך | ליווי ריצה אישי – Peak Passion</title>
+<meta name="description" content="ליווי ריצה אישי מרחוק עם אורי גולדרייך, טריאתלט תחרותי ומאמן ריצה מוסמך. תוכנית שבועית שמסתנכרנת לשעון שלכם, אימוני חיזוק, ניתוח טכניקה וקהילה סגורה.">
+<meta property="og:title" content="אורי גולדרייך | ליווי ריצה אישי">
+<meta property="og:description" content="מרחוק, אבל הכי מקרוב שיש. ליווי ריצה אישי שמותאם לחיים שלכם.">
+<meta property="og:image" content="img/race.jpg">
+<link rel="icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F0F10;--bg2:#17171A;--ink:#EDEAE4;--mute:#9C9890;--line:#2A2A2D;--acc:#E2462B}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Assistant',system-ui,sans-serif;font-size:19px;line-height:1.65}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:'Secular One',sans-serif;font-weight:400;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* header */
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand img{width:44px;height:44px;object-fit:cover}
+.brand b{font-family:'Secular One',sans-serif;font-weight:400;font-size:20px}
+.brand span{color:var(--mute);font-size:15px}
+.top nav{display:flex;gap:28px;font-size:16px}
+.top nav a{text-decoration:none;color:var(--mute)}
+.top nav a:hover{color:var(--ink)}
+.tel{text-decoration:none;font-weight:700;font-size:17px;direction:ltr}
+.tel:hover{color:var(--acc)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--acc);color:#fff;text-decoration:none;font-weight:700;font-size:18px;padding:16px 28px;min-height:52px;border-radius:2px;transition:background .15s}
+.btn:hover{background:#C93A20}
+.btn .arr{font-size:20px;line-height:1}
+.link{font-weight:700;text-decoration:none;border-bottom:2px solid var(--acc);padding-bottom:2px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;min-height:calc(100vh - 77px);border-bottom:1px solid var(--line)}
+.hero-text{padding:80px max(28px,calc((100vw - 1180px)/2 + 28px)) 64px 64px;display:flex;flex-direction:column;justify-content:center}
+.kicker{font-size:16px;color:var(--mute);margin-bottom:28px}
+.kicker em{font-style:normal;color:var(--ink)}
+.hero h1{font-size:clamp(46px,6vw,92px);line-height:1;margin-bottom:32px}
+.hero h1 .ln{display:block;white-space:nowrap}
+.hero h1 .a{color:var(--acc)}
+.hero p{font-size:21px;color:#C8C4BC;max-width:520px;margin:0 0 40px}
+.hero .ctas{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.hero-img{position:relative;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
+
+/* statement */
+.statement{padding:120px 0}
+.statement p{font-family:'Secular One',sans-serif;font-size:clamp(28px,3.4vw,44px);line-height:1.35;margin:0;max-width:980px}
+.statement .a{color:var(--acc)}
+.statement .sig{font-family:'Assistant',sans-serif;font-size:18px;color:var(--mute);margin-top:32px}
+
+/* section heads */
+.sec{padding:110px 0;border-top:1px solid var(--line)}
+.label{font-size:15px;color:var(--mute);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.label::before{content:"";width:28px;height:2px;background:var(--acc)}
+.sec h2{font-size:clamp(36px,4.4vw,58px);line-height:1.08;margin-bottom:24px}
+.lead{font-size:20px;color:#C8C4BC;max-width:640px;margin:0}
+
+/* sync */
+.sync{display:grid;grid-template-columns:1fr 1fr;margin-top:64px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sync div{padding:40px 0 40px 40px}
+.sync div+div{border-right:1px solid var(--line);padding:40px 40px 40px 0}
+.sync div+div{padding-right:40px}
+.sync h3{font-size:26px;margin-bottom:10px}
+.sync p{margin:0;color:var(--mute)}
+
+/* steps */
+.steps{list-style:none;margin:72px 0 0;padding:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:90px 1fr 1.3fr;gap:32px;padding:34px 0;border-top:1px solid var(--line);counter-increment:s;align-items:baseline}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps li::before{content:"0" counter(s);font-family:'Secular One',sans-serif;font-size:22px;color:var(--acc)}
+.steps h3{font-size:28px}
+.steps p{margin:0;color:var(--mute)}
+
+/* photo band */
+.band{height:min(70vh,640px);overflow:hidden}
+.band img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+
+/* included */
+.inc{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
+.inc-head{align-self:start;position:sticky;top:40px}
+.items{border-top:1px solid var(--line)}
+.item{padding:30px 0;border-bottom:1px solid var(--line)}
+.item h3{font-size:25px;margin-bottom:8px}
+.item p{margin:0;color:var(--mute)}
+
+/* community */
+.comm{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.comm-img{min-height:560px;overflow:hidden}
+.comm-img img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.comm-text{background:var(--bg2);padding:90px 64px;display:flex;flex-direction:column;justify-content:center}
+.comm-text h2{font-size:clamp(34px,3.8vw,52px);line-height:1.1;margin-bottom:24px}
+.comm-text p{margin:0 0 16px;color:#C8C4BC}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
+.about img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 30%}
+.about p{color:#C8C4BC;margin:0 0 18px}
+.facts{display:flex;flex-wrap:wrap;gap:0;margin-top:36px;border-top:1px solid var(--line)}
+.facts div{flex:1 1 150px;padding:20px 0 0}
+.facts b{display:block;font-family:'Secular One',sans-serif;font-weight:400;font-size:21px}
+.facts span{color:var(--mute);font-size:16px}
+
+/* faq */
+.faq{max-width:860px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:26px 0;font-family:'Secular One',sans-serif;font-size:23px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--acc);font-family:'Assistant',sans-serif;font-size:28px;line-height:1;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{margin:0 0 26px;color:var(--mute);max-width:720px}
+
+/* cta */
+.cta{padding:130px 0;border-top:1px solid var(--line);text-align:center}
+.cta h2{font-size:clamp(42px,6vw,84px);line-height:1;margin-bottom:24px}
+.cta p{color:#C8C4BC;font-size:20px;max-width:560px;margin:0 auto 44px}
+.cta .big-tel{display:block;font-family:'Secular One',sans-serif;font-size:clamp(30px,4vw,48px);text-decoration:none;direction:ltr;margin-bottom:36px}
+.cta .big-tel:hover{color:var(--acc)}
+
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mute);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--ink)}
+
+/* floating whatsapp on mobile */
+.wa-float{display:none}
+
+@media (max-width:900px){
+  body{font-size:18px}
+  .top nav{display:none}
+  .brand span{display:none}
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-img{order:-1;height:62vh}
+  .hero-text{padding:48px 22px 56px}
+  .wrap{padding:0 22px}
+  .statement{padding:80px 0}
+  .sec{padding:80px 0}
+  .sync{grid-template-columns:1fr}
+  .sync div,.sync div+div{padding:30px 0;border-right:0}
+  .sync div+div{border-top:1px solid var(--line)}
+  .steps li{grid-template-columns:44px 1fr;gap:6px 16px}
+  .steps li p{grid-column:2}
+  .inc{grid-template-columns:1fr;gap:32px}
+  .inc-head{position:static}
+  .comm{grid-template-columns:1fr}
+  .comm-img{min-height:380px}
+  .comm-text{padding:56px 22px}
+  .about{grid-template-columns:1fr;gap:40px}
+  .cta{padding:90px 0 110px}
+  .wa-float{display:flex;opacity:0;pointer-events:none;transition:opacity .25s;position:fixed;bottom:16px;left:16px;right:16px;justify-content:center;z-index:30}
+  .wa-float .btn{width:100%;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+}
+.wa-float.on{opacity:1;pointer-events:auto}
+</style>
+</head>
+<body>
+
+<header class="top">
+<div class="wrap">
+<a class="brand" href="#">
+<img src="img/logo.jpg" alt="Peak Passion">
+<b>אורי גולדרייך</b><span>ליווי ריצה אישי</span>
+</a>
+<nav>
+<a href="#how">איך זה עובד</a>
+<a href="#included">מה מקבלים</a>
+<a href="#about">עליי</a>
+<a href="#faq">שאלות</a>
+</nav>
+<a class="tel" href="tel:+972502525738">050-252-5738</a>
+</div>
+</header>
+
+<section class="hero">
+<div class="hero-text">
+<div class="kicker"><em>אורי גולדרייך</em> · טריאתלט תחרותי ומאמן ריצה מוסמך</div>
+<h1><span class="ln">מרחוק, אבל</span><span class="ln a">הכי מקרוב</span><span class="ln">שיש.</span></h1>
+<p>ליווי ריצה אישי, שמתחיל מהחיים שלכם ולא מתבנית. האימונים נכנסים ישר לשעון, כל ריצה שאתם מסיימים מגיעה אליי, ובכל שבוע אתם מקבלים תוכנית חדשה.</p>
+<div class="ctas">
+<a class="btn" href="https://wa.me/972502525738?text=%D7%94%D7%99%D7%99%20%D7%90%D7%95%D7%A8%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%94%D7%9C%D7%99%D7%95%D7%95%D7%99">לשיחת היכרות בוואטסאפ <span class="arr">←</span></a>
+<a class="link" href="#how">איך זה עובד</a>
+</div>
+</div>
+<div class="hero-img"><img src="img/race.jpg" alt="אורי גולדרייך באמצע מרוץ"></div>
+</section>
+
+<section class="statement">
+<div class="wrap">
+<p>אני מאמין שהספורט צריך להתאים לחיים, <span class="a">ולא החיים לספורט.</span> לכן לא תקבלו ממני תוכנית לחודשיים קדימה. תקבלו תוכנית לשבוע הקרוב, שנבנית מחדש לפי מה שקרה בשבוע שעבר.</p>
+<div class="sig">— אורי</div>
+</div>
+</section>
+
+<section class="sec" id="how">
+<div class="wrap">
+<div class="label">איך זה עובד</div>
+<h2>אני רואה כל ריצה שלכם.</h2>
+<p class="lead">אני עובד עם תוכנה שמחברת ביני לבין שעון האימונים שלכם, בשני הכיוונים. ככה אני יכול ללוות אתכם ברמה מקצועית בכל יום, גם מרחוק.</p>
+<div class="sync">
+<div><h3>ממני אליכם</h3><p>כל אימון, עם קצבים והערות, נכנס לשעון שלכם בלחיצת כפתור. יוצאים לרוץ, והשעון כבר יודע מה לעשות.</p></div>
+<div><h3>מכם אליי</h3><p>כשאתם מסיימים אימון, הנתונים עולים אליי. אני רואה איפה עצרתם, איפה הדופק עלה ואיך הקצב התנהג לאורך הדרך.</p></div>
+</div>
+<ol class="steps">
+<li><h3>טופס היכרות</h3><p>שאלות פשוטות על הכושר, השיאים, המטרות ואורח החיים שלכם, כדי שאבין איך התוכנית תשתלב ביום־יום שלכם.</p></li>
+<li><h3>שיחת פתיחה בזום</h3><p>עוברים יחד על הטופס, מחדדים דברים משני הצדדים, ואני מציג לכם את התוכנית הראשונית.</p></li>
+<li><h3>תוכנית לשבוע הקרוב</h3><p>בכל שבוע מגיעה תוכנית חדשה, שמבוססת על מה שלמדתי עליכם בשבוע שעבר.</p></li>
+<li><h3>הודעה אחרי כל אימון</h3><p>אתם מספרים לי איך היה, ויחד אנחנו מחליטים מה משפרים ומה משמרים.</p></li>
+</ol>
+</div>
+</section>
+
+<div class="band"><img src="img/beach.jpg" alt="אורי רץ לאורך החוף בתחרות טריאתלון"></div>
+
+<section class="sec" id="included">
+<div class="wrap inc">
+<div class="inc-head">
+<div class="label">מה מקבלים</div>
+<h2>הרבה יותר מתוכנית אימונים.</h2>
+<p class="lead">הערך הכי גדול שאני מביא הוא הליווי היומיומי. ככל שתדברו איתי יותר, תשאלו יותר ותתייעצו יותר, כך תקבלו יותר.</p>
+</div>
+<div class="items">
+<div class="item"><h3>אימוני ריצה מגוונים</h3><p>אימוני איכות מסוגים שונים ואימוני נפח, בהתאם למטרה שהצבנו יחד.</p></div>
+<div class="item"><h3>אימוני חיזוק שנבנו לרצים</h3><p>בריצה הגוף סופג המון זעזועים, כל פעם על רגל אחת. לכן כל מתאמן מקבל לפחות פעמיים בשבוע אימוני יציבה וחיזוק, שחשובים בעיניי לא פחות מאימוני הריצה.</p></div>
+<div class="item"><h3>ניתוח טכניקה</h3><p>מדי פעם אתם שולחים לי סרטון שלכם רצים. אני מנתח אותו בהילוך איטי ושולח לכם תרגילים ודגשים לריצות הבאות.</p></div>
+<div class="item"><h3>זמינות לכל שאלה</h3><p>התאוששות, שינה, תזונה, ציוד וכל מה שמסביב לאימונים. יש לי ידע רב כספורטאי וכמאמן, ואני רוצה שתנצלו אותו.</p></div>
+<div class="item"><h3>התאמת עומסים</h3><p>מתאמנים גם בקבוצת כושר קרבי או במסגרת אחרת? אני מתאים את העומסים בתוכנית כך שהאימונים משלימים זה את זה.</p></div>
+</div>
+</div>
+</section>
+
+<section class="comm">
+<div class="comm-img"><img src="img/swim.jpg" alt="אורי יוצא מהמים בתחרות טריאתלון"></div>
+<div class="comm-text">
+<div class="label">הקהילה</div>
+<h2>לא רצים לבד.</h2>
+<p>כל מתאמן מצטרף לקהילה סגורה, שפתוחה רק למתאמנים שלי. שם אני משתף תכנים, מאמרים וטיפים שאני לא מפרסם בשום מקום אחר.</p>
+<p>מדי תקופה אנחנו נפגשים גם בהרצאות זום, איתי או עם אנשי מקצוע שאני מביא במיוחד בשבילכם.</p>
+</div>
+</section>
+
+<section class="sec" id="about">
+<div class="wrap about">
+<img src="img/finish.jpg" alt="אורי בקו הסיום של טריאתלון אילת">
+<div>
+<div class="label">נעים להכיר</div>
+<h2>אני אורי.</h2>
+<p>אני טריאתלט תחרותי, מאמן ריצה מוסמך, ומשתף ברשתות תוכן על ספורט ואורח חיים בריא.</p>
+<p>אני שוחה, רוכב ורץ בעצמי, ומכיר מקרוב את האתגר לשלב אימונים רציניים עם כל השאר. בגלל זה חשוב לי להכיר את מי שאני מלווה, ולא רק את הנתונים שלו.</p>
+<div class="facts">
+<div><b>טריאתלט</b><span>מתחרה באופן פעיל</span></div>
+<div><b>מאמן ריצה</b><span>מוסמך</span></div>
+<div><b>יוצר תוכן</b><span>ספורט ואורח חיים</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="faq">
+<div class="wrap">
+<div class="label">שאלות</div>
+<h2>מה עוד כדאי לדעת</h2>
+<div class="faq">
+<details><summary>איך מקבלים את האימונים?</summary><p>האימונים מסתנכרנים ישירות לשעון האימונים שלכם, עם קצבים והערות לכל אימון. בכל שבוע מגיעה התוכנית לשבוע הקרוב.</p></details>
+<details><summary>אני כבר מתאמן במסגרת אחרת. זה מתאים?</summary><p>כן. אם אתם מתאמנים גם בקבוצת כושר קרבי או בכל מסגרת אחרת, אני מתאים את העומסים בתוכנית שלנו בהתאם, כך שהכול עובד יחד.</p></details>
+<details><summary>למה התוכנית נשלחת שבוע אחרי שבוע?</summary><p>כי גם אחרי שיחת הפתיחה אני עוד לא מכיר אתכם כספורטאים. אני לומד איך אתם מגיבים לכל אימון, ובונה כל שבוע מחדש לפי מה שלמדנו.</p></details>
+<details><summary>יש התחייבות?</summary><p>אין התחייבות. אפשר להפסיק בכל שלב, בהודעה של חודש מראש.</p></details>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="wrap">
+<h2>בואו נדבר.</h2>
+<p>שלחו לי הודעה ונקבע שיחת היכרות קצרה. נבין יחד מה המטרה שלכם, ואיך אני יכול לעזור לכם להגיע אליה.</p>
+<a class="big-tel" href="tel:+972502525738">050-252-5738</a>
+<a class="btn" href="https://wa.me/972502525738?text=%D7%94%D7%99%D7%99%20%D7%90%D7%95%D7%A8%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%94%D7%9C%D7%99%D7%95%D7%95%D7%99">שלחו הודעה בוואטסאפ <span class="arr">←</span></a>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<span>Peak Passion · אורי גולדרייך, ליווי ריצה אישי</span>
+<a href="tel:+972502525738">050-252-5738</a>
+</div>
+</footer>
+
+<div class="wa-float"><a class="btn" href="https://wa.me/972502525738?text=%D7%94%D7%99%D7%99%20%D7%90%D7%95%D7%A8%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%94%D7%9C%D7%99%D7%95%D7%95%D7%99">לשיחת היכרות בוואטסאפ</a></div>
+
+<script>
+var f=document.querySelector('.wa-float');addEventListener('scroll',function(){f.classList.toggle('on',scrollY>window.innerHeight*0.9)},{passive:true});
+</script>
+</body>
+</html>
